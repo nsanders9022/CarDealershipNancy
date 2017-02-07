@@ -14,7 +14,7 @@ namespace CarDealership
         return View["view_all_cars.cshtml", allCars];
       };
       Post["/cars_added"] = _ => {
-        Car newCar = new Car(Request.Form["new-makeModel", "new-miles", "new-price"]);
+        Car newCar = new Car(Request.Form["new-makeModel"], Request.Form["new-miles"], Request.Form["new-price"]);
         newCar.Save();
         return View["cars_added.cshtml", newCar];
       };
